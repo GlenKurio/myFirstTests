@@ -1,4 +1,4 @@
-const getPeoplePromise = () => {
+const getPeoplePromise = async (fetch) => {
   return fetch("https://swapi.py4e.com/api/people")
     .then((response) => response.json())
     .then((data) => {
@@ -9,7 +9,7 @@ const getPeoplePromise = () => {
     });
 };
 
-const getPeople = async () => {
+const getPeople = async (fetch) => {
   const getRequest = await fetch("https://swapi.py4e.com/api/people");
   const data = await getRequest.json();
 
